@@ -1,0 +1,131 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #0f172a;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-size: 32px;
+  margin: 20px 0 10px;
+}
+
+#caixa-informacoes {
+  background-color: rgb(47, 63, 88);
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.entrada-box {
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
+  max-width: 400px;
+  width: 100%;
+}
+
+#entrada-caixas {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.caixa {
+  width: 50px;
+  height: 50px;
+  background-color: rgb(47, 63, 88);
+  border: 2px solid #334155;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caixa.ativa {
+  border-color: #2f9fcf;
+  box-shadow: 0 0 8px #2a8eb9;
+}
+
+.caixa.certa {
+  color: #22c55e !important;
+  font-weight: bold;
+}
+
+.caixa.errada {
+  color: #facc15 !important;
+  font-weight: bold;
+}
+
+/* Tabuleiro com rolagem interna */
+#tabuleiro {
+  flex-grow: 1;
+  overflow-y: auto;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.linha-tabuleiro {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+/* Teclado fixo no final */
+.teclado {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-top: auto;
+  padding-bottom: 10px;
+}
+
+.linha-teclado {
+  display: flex;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.teclado button {
+  padding: 1rem;
+  font-size: 1rem;
+  background-color: #334155;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.teclado button:hover {
+  background-color: #455872;
+}
+
+/* Oculta o input real */
+#entrada {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}

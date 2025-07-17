@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Letroso Infinito</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>LETRIX</h1>
+
+  <!-- Caixa de informações -->
+  <div id="caixa-informacoes">Digite uma palavra de 5 letras</div>
+
+  <!-- Caixas visuais para digitação -->
+   <div class="entrada-box" id="entrada-box">
+       <div class="linha-tabuleiro" id="entrada-caixas">
+         <div class="caixa" id="c0"></div>
+         <div class="caixa" id="c1"></div>
+         <div class="caixa" id="c2"></div>
+         <div class="caixa" id="c3"></div>
+         <div class="caixa" id="c4"></div>
+       </div>
+   </div>
+
+  <!-- Tabuleiro de tentativas -->
+  <div id="tabuleiro"></div>
+
+  <!-- Campo de entrada invisível -->
+  <input type="text" id="entrada" maxlength="5" autofocus />
+
+  <!-- Teclado virtual -->
+  <div class="teclado">
+    <div class="linha-teclado">
+      <button>Q</button><button>W</button><button>E</button><button>R</button><button>T</button><button>Y</button><button>U</button><button>I</button><button>O</button><button>P</button>
+    </div>
+    <div class="linha-teclado">
+      <button>A</button><button>S</button><button>D</button><button>F</button><button>G</button><button>H</button><button>J</button><button>K</button><button>L</button>
+    </div>
+    <div class="linha-teclado">
+      <button>Z</button><button>X</button><button>C</button><button>V</button><button>B</button><button>N</button><button>M</button><button>←</button><button>ENTER</button>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+</html>
