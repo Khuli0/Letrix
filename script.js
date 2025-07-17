@@ -119,8 +119,16 @@
       }
     });
 
-    if (letra === palavraSecreta[i]) {
-  caixa.classList.add("certa");
-    } else if (palavraSecreta.includes(letra)) {
-  caixa.classList.add("errada");
-    }
+
+const modal = document.getElementById("infoModal");
+const abrirBtn = document.getElementById("openModal");
+
+abrirBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});

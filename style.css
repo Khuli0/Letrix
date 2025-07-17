@@ -12,12 +12,13 @@ html, body {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 40px;
   margin: 20px 0 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
 }
 
 #caixa-informacoes {
-  background-color: rgb(47, 63, 88);
+  background-color: #2f3f58;
   border: 2px solid #334155;
   border-radius: 8px;
   padding: 10px 20px;
@@ -46,7 +47,7 @@ h1 {
 .caixa {
   width: 50px;
   height: 50px;
-  background-color: rgb(47, 63, 88);
+  background-color: #2f3f58;
   border: 2px solid #334155;
   color: white;
   font-size: 28px;
@@ -128,4 +129,97 @@ h1 {
   opacity: 0;
   position: absolute;
   pointer-events: none;
+}
+
+.infoModal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Conteúdo da modal */
+.infoConteudo {
+  background-color: #1e293b;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.topo {
+  text-align: center;
+  margin-bottom: 5asdapx;
+}
+
+.topo h1 {
+  font-size: 48px;
+  color: white;
+  margin: 0;
+}
+
+/* Botão "i" fixo no topo direito da tela */
+#openModal {
+  position: relative;
+  top: -45px;
+  left: 180px;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+#openModal img {
+  display: block;
+}
+
+  .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  }
+
+  .icon {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  }
+
+  .icon img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+  }
+
+  .icon img.hover {
+  opacity: 0;
+  }
+
+  .icon:hover img.hover {
+  opacity: 1;
+  }
+
+  .icon:hover img.default {
+  opacity: 0;
+  }
+
+.Copyright {
+  font-family:'Courier New', Courier, monospace;
 }
