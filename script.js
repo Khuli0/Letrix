@@ -4,6 +4,7 @@
     const input = document.getElementById("entrada");
     const botoesTeclado = document.querySelectorAll(".teclado button");
 
+    let tentativas = 0;
     let palavraAtual = "";
 
     function atualizarCaixas() {
@@ -33,29 +34,42 @@
       }
     }
 
-    function enviarPalavra() {
-      if (palavraAtual.length !== 5) {
-        atualizarMensagem("Digite exatamente 5 letras.");
-        return;
-      }
+function enviarPalavra() {
+  if (palavraAtual.length !== 5) {
+    atualizarMensagem("Digite exatamente 5 letras.");
+    return;
+  }
 
-      const linha = document.createElement("div");
-      linha.classList.add("linha-tabuleiro");
+  const linha = document.createElement("div");
+  linha.classList.add("linha-tabuleiro");
 
-      for (let letra of palavraAtual) {
-        const caixa = document.createElement("div");
-        caixa.classList.add("caixa");
-        caixa.textContent = letra;
-        linha.appendChild(caixa);
-      }
+  for (let letra of palavraAtual) {
+    const caixa = document.createElement("div");
+    caixa.classList.add("caixa");
+    caixa.textContent = letra;
+    linha.appendChild(caixa);
+  }
 
-      tabuleiro.appendChild(linha);
-      tabuleiro.scrollTop = tabuleiro.scrollHeight;
+  tabuleiro.appendChild(linha);
+  tabuleiro.scrollTop = tabuleiro.scrollHeight;
 
-      verificarPalavra(palavraAtual);
-      palavraAtual = "";
-      atualizarCaixas();
-    }
+  tentativas++;
+  document.getElementById("contador-tentativas").textContent = `Tentativas: ${tentativas}`;
+
+  verificarPalavra(palavraAtual);
+  palavraAtual = "";
+  atualizarCaixas(); // atualiza entrada
+  limpaCaixasEntrada(); // limpa visual
+}
+
+  function limpaCaixasEntrada() {
+  for (let i = 0; i < 5; i++) {
+    const caixa = document.getElementById("c" + i);
+    caixa.textContent = "";
+    caixa.classList.remove("ativa");
+  }
+}
+
 
     function verificarPalavra(palavra) {
       let certas = 0;
@@ -120,15 +134,30 @@
     });
 
 
-const modal = document.getElementById("infoModal");
-const abrirBtn = document.getElementById("openModal");
+// Modal de informações
+const infoModal = document.getElementById("infoModal");
+const openModalInfo = document.getElementById("openModalInfo");
 
-abrirBtn.addEventListener("click", () => {
-  modal.style.display = "flex";
+openModalInfo.addEventListener("click", () => {
+  infoModal.style.display = "flex";
 });
 
+// Modal de instruções
+const instructionsModal = document.getElementById("instructionsModal");
+const openModalInstructions = document.getElementById("openModalInstructions");
+
+openModalInstructions.addEventListener("click", () => {
+  instructionsModal.style.display = "flex";
+});
+
+// Fecha os modais ao clicar fora do conteúdo
 window.addEventListener("click", (e) => {
-  if (e.target === modal) {
-    modal.style.display = "none";
+  if (e.target === infoModal) {
+    infoModal.style.display = "none";
+  }
+
+  if (e.target === instructionsModal) {
+    instructionsModal.style.display = "none";
   }
 });
+

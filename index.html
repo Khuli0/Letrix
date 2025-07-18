@@ -7,12 +7,21 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="topo">
+<div class="topo">
+  <button id="openModalInstructions">
+    <img src="imagens/i.png" alt="Instruções" width="30px" height="30px">
+  </button>
+
+  <div class="topo-centro">
     <h1>LETRIX</h1>
-    <button id="openModal">
-      <img src="imagens/i.png" alt="info" width="30px" height="30px">
-    </button>
+    <p id="contador-tentativas">Tentativas: 0</p>
   </div>
+
+  <button id="openModalInfo">
+    <img src="imagens/i.png" alt="Informações" width="30px" height="30px">
+  </button>
+</div>
+
 
   <!-- Modal -->
   <div id="infoModal" class="infoModal">
@@ -39,6 +48,15 @@
 </footer>
     </div>
   </div>
+
+<div id="instructionsModal" class="infoModal">
+  <div class="infoConteudo">
+    <p>Como jogar:</p>
+    <p>Digite uma palavra de 5 letras.</p>
+    <p>O sistema vai dizer quantas letras estão certas e quantas estão no lugar errado.</p>
+  </div>
+</div>
+
 
   <!-- Caixa de informações -->
   <div id="caixa-informacoes">Digite uma palavra de 5 letras</div>

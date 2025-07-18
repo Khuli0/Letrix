@@ -11,11 +11,78 @@ html, body {
   align-items: center;
 }
 
-h1 {
-  font-size: 40px;
-  margin: 20px 0 10px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+/* ---------- TOPO COM TÍTULO E BOTÕES ---------- */
+
+.topo {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
+
+.topo-centro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.topo-centro h1 {
+  font-size: 40px;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contador-tentativas {
+  font-size: 16px;
+  margin-top: 4px;
+  color: #ccc;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.topo button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.topo button img {
+  display: block;
+}
+
+
+.topo-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 10px;
+}
+
+.topo-flex h1 {
+  font-size: 40px;
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topo-flex button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.topo-flex img {
+  display: block;
+}
+
+
+/* ---------- CAIXA DE INFORMAÇÕES ---------- */
 
 #caixa-informacoes {
   background-color: #2f3f58;
@@ -27,6 +94,8 @@ h1 {
   max-width: 400px;
   width: 100%;
 }
+
+/* ---------- ENTRADA ---------- */
 
 .entrada-box {
   background-color: #1e293b;
@@ -74,7 +143,8 @@ h1 {
   font-weight: bold;
 }
 
-/* Tabuleiro com rolagem interna */
+/* ---------- TABULEIRO ---------- */
+
 #tabuleiro {
   flex-grow: 1;
   overflow-y: auto;
@@ -94,7 +164,8 @@ h1 {
   justify-content: center;
 }
 
-/* Teclado fixo no final */
+/* ---------- TECLADO ---------- */
+
 .teclado {
   display: flex;
   flex-direction: column;
@@ -131,6 +202,8 @@ h1 {
   pointer-events: none;
 }
 
+/* ---------- MODAIS ---------- */
+
 .infoModal {
   display: none;
   position: fixed;
@@ -142,11 +215,8 @@ h1 {
   background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
-  padding: 0;
-  margin: 0;
 }
 
-/* Conteúdo da modal */
 .infoConteudo {
   background-color: #1e293b;
   padding: 20px;
@@ -155,71 +225,47 @@ h1 {
   width: 90%;
   text-align: center;
   box-shadow: 0 0 15px rgba(0,0,0,0.3);
-}
-
-.topo {
-  text-align: center;
-  margin-bottom: 5asdapx;
-}
-
-.topo h1 {
-  font-size: 48px;
   color: white;
-  margin: 0;
 }
 
-/* Botão "i" fixo no topo direito da tela */
-#openModal {
-  position: relative;
-  top: -45px;
-  left: 180px;
-  border: none;
-  background: none;
-  padding: 0;
-  cursor: pointer;
-  z-index: 1001;
-}
+/* ---------- RODAPÉ E ICONES ---------- */
 
-#openModal img {
-  display: block;
-}
-
-  .footer {
+.footer {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 20px;
   padding: 20px;
-  }
+}
 
-  .icon {
+.icon {
   position: relative;
   width: 30px;
   height: 30px;
   display: inline-block;
-  }
+}
 
-  .icon img {
+.icon img {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   transition: opacity 0.3s ease;
-  }
+}
 
-  .icon img.hover {
+.icon img.hover {
   opacity: 0;
-  }
+}
 
-  .icon:hover img.hover {
+.icon:hover img.hover {
   opacity: 1;
-  }
+}
 
-  .icon:hover img.default {
+.icon:hover img.default {
   opacity: 0;
-  }
+}
 
 .Copyright {
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
 }
