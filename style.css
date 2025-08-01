@@ -269,3 +269,64 @@ html, body {
 .Copyright {
   font-family: 'Courier New', Courier, monospace;
 }
+
+
+#botaoDica {
+  margin: 1px;
+  padding: 1px 5px;
+  font-size: 1rem;
+  background-color: #22c55e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#botaoDica:hover {
+  background-color: #16a34a;
+}
+
+
+.dica-box {
+  background-color: #1e293b;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 5px;
+  max-width: 400px;
+}
+
+.linha-tabuleiro-dica {
+  display: flex;
+  gap: 3px;
+  justify-content: center;
+}
+
+#entrada-caixas-dica {
+  display: flex;
+  justify-content: center;
+  gap: 3px;
+}
+
+.box-dica {
+  width: 20px;
+  height: 20px;
+  background-color: #2f3f58;
+  border: 2px solid #334155;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  gap: 1px;
+}
+
+.box-dica.certa {
+  background-color: #14532d;
+  color: #22c55e;
+  font-size: 1rem;
+}
