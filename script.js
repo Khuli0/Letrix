@@ -1,5 +1,5 @@
 // VARIÁVEIS PRINCIPAIS
-const palavraSecreta = "PERTO";
+let palavraSecreta = "";
 const tabuleiro = document.getElementById("tabuleiro");
 const caixaInfo = document.getElementById("caixa-informacoes");
 const input = document.getElementById("entrada");
@@ -11,6 +11,20 @@ let tentativas = 0;
 let palavraAtual = ["", "", "", "", ""];
 let posicaoAtual = 0;
 let dicasUsadas = [];
+
+// CARREGA PALAVRAS DO JSON
+fetch("palavras.json")
+  .then(response => response.json())
+  .then(lista => {
+    const aleatoria = lista[Math.floor(Math.random() * lista.length)];
+    palavraSecreta = aleatoria.toUpperCase();
+    console.log("Palavra secreta:", palavraSecreta); // Apenas para teste
+  })
+  .catch(erro => {
+    atualizarMensagem("Erro ao carregar palavras.");
+    console.error(erro);
+  });
+
 
 // FUNÇÃO ATUALIZAR ENTRADA
 function atualizarCaixas() {
